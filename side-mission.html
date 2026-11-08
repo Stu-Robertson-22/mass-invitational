@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1a0f1f">
+<meta name="robots" content="noindex, nofollow">
+<title>Side Mission · Thu 12 Nov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1a0f1f;--bg2:#24152b;--surface:#2c1a34;--line:#3d2747;--text:#fff;--muted:#c9b8d1;--gold:#f2c230;--p1:#1fb8e0;--p2:#e0245e;--green:#3ccf5a;--wine:#9b1d4a;--r:8px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;min-height:100dvh;overflow-x:hidden}
+  .wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .label{font-family:"Russo One";font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  h2{font-family:"Russo One";font-size:1.6rem;margin:.25rem 0 1rem;transform:skew(-6deg);transform-origin:left}
+  h3{font-family:"Russo One";font-size:1.1rem;line-height:1.2}
+  p{color:var(--muted)}
+  b{color:var(--text)}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;isolation:isolate;padding:2.75rem 1rem 2.25rem;text-align:center;background:linear-gradient(135deg,#0d4a63,#1fb8e0 55%,#0d4a63)}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background:repeating-linear-gradient(-62deg,transparent 0 22px,#fff 22px 24px)}
+  .hero::after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:40%;background:linear-gradient(transparent,rgba(26,15,31,.85))}
+  .tape{display:inline-flex;gap:.5rem;align-items:center;background:var(--gold);color:var(--bg);font-family:"Russo One";font-size:.75rem;letter-spacing:.14em;padding:.35rem .9rem;transform:skew(-10deg) rotate(-2deg);box-shadow:4px 4px 0 var(--bg)}
+  .tape svg{width:14px;height:14px;stroke:var(--bg)}
+  .sm{font-family:"Russo One";font-size:clamp(2.6rem,13vw,4.6rem);line-height:.95;margin:1rem 0 .4rem;transform:skew(-10deg);text-shadow:5px 5px 0 var(--bg)}
+  .sm span{color:var(--gold)}
+  .when{display:inline-block;font-family:"Russo One";background:var(--bg);padding:.35rem 1rem;font-size:.95rem;clip-path:polygon(5% 0,100% 0,95% 100%,0 100%)}
+  .squad{display:flex;justify-content:center;gap:.6rem;margin-top:1.1rem}
+  .tag{font-family:"Russo One";background:var(--bg);border:2px solid var(--gold);padding:.35rem 1rem;transform:skew(-10deg)}
+  .tag span{display:inline-block;transform:skew(10deg)}
+  .only{margin-top:.9rem;font-size:.72rem;letter-spacing:.08em;color:#fff;opacity:.9}
+
+  section{padding:2.25rem 0}
+  .alt{background:var(--bg2)}
+
+  /* TIMELINE */
+  .tl{display:grid;gap:.6rem}
+  .stop{display:grid;grid-template-columns:4.2rem 1fr;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .t{font-family:"Russo One";background:var(--bg2);color:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.9rem;border-right:1px solid var(--line);text-align:center;line-height:1.1;padding:.5rem .2rem}
+  .t small{display:block;font-size:.6rem;color:var(--muted);letter-spacing:.08em;margin-top:.15rem}
+  .b{padding:.75rem .9rem}
+  .b p{font-size:.88rem;margin-top:.2rem}
+  .meta{font-size:.68rem;color:var(--muted);margin-top:.4rem;letter-spacing:.02em}
+  .chip{display:inline-block;font-family:"Russo One";font-size:.6rem;letter-spacing:.08em;padding:.12rem .45rem;transform:skew(-10deg);margin-left:.35rem;vertical-align:2px}
+  .c-golf{background:var(--green);color:var(--bg)}
+  .c-fizz{background:var(--gold);color:var(--bg)}
+  .c-red{background:var(--wine);color:#fff}
+  .c-ride{background:var(--p1);color:var(--bg)}
+  .stop.ride{background:transparent;border-style:dashed}
+  .stop.ride .t{background:transparent}
+
+  .c-fly{background:#e0245e;color:#fff}
+  .c-new{background:#fff;color:var(--bg)}
+  .c-dd{background:var(--p2);color:#fff}
+  .stop.fly{border:2px solid var(--p2)}
+  .stop.fly .t{color:#fff;background:var(--p2)}
+  .stop.fly .t small{color:#ffd1df}
+  .opt.dd{border:2px solid var(--p2)}
+  .c-home{background:var(--green);color:var(--bg)}
+  .stop.home{border:2px solid var(--green)}
+  .stop.home .t{background:var(--green);color:var(--bg)}
+  .stop.home .t small{color:var(--bg)}
+  /* RED PICK */
+  .pick{border:2px solid var(--wine);border-radius:var(--r);padding:1.1rem;background:linear-gradient(135deg,rgba(155,29,74,.28),var(--surface) 70%)}
+  .pick h3{font-size:1.3rem;transform:skew(-6deg);transform-origin:left;margin:.2rem 0 .5rem}
+  .pick ul,.list{list-style:none;display:grid;gap:.4rem;font-size:.9rem;color:var(--muted)}
+  .pick li::before,.list li::before{content:"";display:inline-block;width:8px;height:8px;transform:skew(-14deg);margin-right:.55rem;vertical-align:1px;background:var(--wine)}
+  .alts{margin-top:.9rem;font-size:.8rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.1);padding-top:.7rem}
+
+  /* TRANSPORT */
+  .opts{display:grid;gap:.6rem}
+  .opt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.85rem 1rem}
+  .opt.best{border:2px solid var(--p1)}
+  .opt p{font-size:.88rem;margin-top:.2rem}
+  .no{border-style:dashed;opacity:.85}
+
+  /* CHECKLIST */
+  .check{display:grid;gap:.45rem}
+  .check label{display:flex;gap:.7rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.7rem .85rem;font-size:.9rem;cursor:pointer}
+  .check input{appearance:none;flex:none;width:20px;height:20px;border:2px solid var(--gold);transform:skew(-10deg);margin-top:1px;display:grid;place-items:center}
+  .check input:checked{background:var(--gold)}
+  .check input:checked::after{content:"";width:6px;height:10px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg) skew(10deg);margin-top:-2px}
+  .check input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .check label:has(input:checked) span{color:var(--muted);text-decoration:line-through}
+
+  footer{padding:1.75rem 0 2.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+</defs></svg>
+
+<header class="hero">
+  <div class="tape"><svg><use href="#i-lock"/></svg>CLASSIFIED · PRE-TOURNAMENT</div>
+  <h1 class="sm">SIDE<br><span>MISSION</span></h1>
+  <div class="when">Thu 12 Nov · Pipers River &amp; Bridport</div>
+  <div class="squad"><div class="tag"><span>STU</span></div><div class="tag"><span>ANDREW</span></div></div>
+  <div class="only">STU &amp; ANDREW ONLY · DOES NOT COUNT TOWARDS THE MASS INVITATIONAL</div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="label">The run sheet</div>
+    <h2>Mission plan</h2>
+    <div class="tl">
+      <div class="stop fly">
+        <div class="t">11:25<small>AM</small></div>
+        <div class="b"><h3>Touchdown, Launceston <span class="chip c-fly">QANTAS</span></h3>
+          <p>Land at Launceston Airport, grab the hire car and head north via Lilydale. About an hour to Pipers Brook.</p>
+          <div class="meta mono">Flight QF ____ · arr LST 11:25am · collect hire car</div></div>
+      </div>
+      <div class="stop">
+        <div class="t">1:00<small>PM</small></div>
+        <div class="b"><h3>Pipers Brook Vineyard <span class="chip c-new">NEW STOP</span></h3>
+          <p>The region's pioneer, here since 1974. Taste the riesling and pinot gris, a change from the bubbles. Grab a quick bite at the on-site café.</p>
+          <div class="meta mono">1216 Pipers Brook Rd · hours vary by season, call ahead · (03) 6382 7555</div></div>
+      </div>
+      <div class="stop">
+        <div class="t">2:00<small>PM</small></div>
+        <div class="b"><h3>House of Arras <span class="chip c-fizz">SPARKLING</span></h3>
+          <p>The main event. A seated tasting of Australia's benchmark sparkling, with Bay of Fires pinot noir poured here too.</p>
+          <div class="meta mono">40 Baxters Rd, Pipers River · Thu–Mon 10–5 · bookings essential · (03) 6382 7622</div></div>
+      </div>
+      <div class="stop">
+        <div class="t">3:20<small>PM</small></div>
+        <div class="b"><h3>Delamere Vineyards <span class="chip c-red">THE RED</span></h3>
+          <p>Pinot noir on the road to Bridport. Get there before the 4:30 close.</p>
+          <div class="meta mono">4238 Bridport Rd, Pipers Brook · Thu–Mon 10:30–4:30 · bookings preferred · 0456 910 274</div></div>
+      </div>
+      <div class="stop">
+        <div class="t">4:30<small>PM</small></div>
+        <div class="b"><h3>Bridport Golf Club <span class="chip c-golf">9 HOLES</span></h3>
+          <p>Twilight nine at the local club. Plenty of daylight in mid-November. Clubhouse bar for after.</p>
+          <div class="meta mono">Main St, Bridport · (03) 6356 1557 · pay at clubhouse</div></div>
+      </div>
+      <div class="stop home">
+        <div class="t">6:45<small>PM</small></div>
+        <div class="b"><h3>Check in: Bridport by the Sea <span class="chip c-home">BASE</span></h3>
+          <p>Three-bedroom house with sea views, about 2 km from Barnbougle Beach. Drop the bags and the bottles. Mission complete.</p>
+          <div class="meta mono">Check-in 2pm–8pm · tell them your arrival time in advance</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="label">The red</div>
+    <div class="pick">
+      <div class="label" style="color:#ff7aa6">Recommended</div>
+      <h3>Delamere pinot noir</h3>
+      <ul>
+        <li>One of the area's original vineyards, planted in the early 80s and focused on <b>pinot noir and chardonnay</b>.</li>
+        <li>Ask about the <b>Block 8 Pinot Noir</b>, their single-block top drop.</li>
+        <li>It's on Bridport Road, so it's <b>on the way to golf</b>, not a detour.</li>
+      </ul>
+      <div class="alts"><b>If you've time to spare:</b> Jansz is next door to Pipers Brook (sparkling, Thu–Mon 10–5).</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Getting around</div>
+    <h2>Extraction plan</h2>
+    <div class="opts">
+      <div class="opt best">
+        <h3>Hire car from Launceston Airport <span class="chip c-ride">THE PLAN</span></h3>
+        <p>Collect on landing. Airport to Pipers Brook is about an hour, and the stops are 10–20 minutes apart. Then it's a short run to Bridport.</p>
+      </div>
+      <div class="opt dd">
+        <h3>Designated driver <span class="chip c-dd">RULE</span></h3>
+        <p>Pick one driver for the day. <b>The driver spits, doesn't sip.</b> Ask for a spittoon at each stop. The other one can buy the bottles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="label">Before you go</div>
+    <h2>Mission checklist</h2>
+    <div class="check">
+      <label><input type="checkbox"><span>Add the Qantas flight number</span></label>
+      <label><input type="checkbox"><span>Book the hire car (Launceston Airport, Thu 12 Nov)</span></label>
+      <label><input type="checkbox"><span>Call Pipers Brook to confirm they're open around 1pm</span></label>
+      <label><input type="checkbox"><span>Book the House of Arras tasting for 2:00pm</span></label>
+      <label><input type="checkbox"><span>Book Delamere for 3:20pm</span></label>
+      <label><input type="checkbox"><span>Call Bridport Golf Club about a 4:30pm hit-off</span></label>
+      <label><input type="checkbox"><span>Tell Bridport by the Sea you'll arrive around 6:45pm (check-in closes 8pm)</span></label>
+      <label><input type="checkbox"><span>Decide who's driving</span></label>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Hours and contacts are from published listings. Confirm when you book. Prequel to the 2026 MASS Invitational.</div></footer>
+</body>
+</html>

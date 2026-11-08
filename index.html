@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1a0f1f">
+<meta name="robots" content="noindex, nofollow">
+<title>2026 MASS Invitational</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1a0f1f; --bg2:#24152b; --surface:#2c1a34; --line:#3d2747;
+    --text:#ffffff; --muted:#c9b8d1;
+    --gold:#f2c230; --p1:#1fb8e0; --p2:#e0245e; --green:#3ccf5a;
+    --r:8px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;min-height:100dvh;overflow-x:hidden}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+  .display{font-family:"Russo One",sans-serif;letter-spacing:-.01em;line-height:1.05}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .label{font-family:"Russo One",sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:min(92dvh,760px);display:grid;place-items:center;overflow:hidden;isolation:isolate}
+  .hero::before,.hero::after{content:"";position:absolute;inset:0;z-index:-2}
+  .hero::before{background:linear-gradient(135deg,#0d4a63 0%,#1fb8e0 100%);clip-path:polygon(0 0,62% 0,38% 100%,0 100%)}
+  .hero::after{background:linear-gradient(315deg,#5e0d2a 0%,#e0245e 100%);clip-path:polygon(62% 0,100% 0,100% 100%,38% 100%)}
+  .speed{position:absolute;inset:0;z-index:-1;opacity:.18;background:repeating-linear-gradient(-62deg,transparent 0 22px,rgba(255,255,255,.55) 22px 24px)}
+  .slash{position:absolute;z-index:-1;left:50%;top:-10%;width:14px;height:120%;background:var(--gold);transform:translateX(-50%) rotate(14deg);box-shadow:0 0 0 4px var(--bg)}
+  .hero-inner{text-align:center;padding:4rem 1rem}
+  .hero .label{color:#fff;opacity:.9}
+  .vs{font-size:clamp(6rem,24vw,13rem);color:var(--gold);transform:skew(-10deg);text-shadow:6px 6px 0 var(--bg),-2px -2px 0 var(--bg);margin:.2em 0 .1em;animation:slam .5s ease-out both}
+  .year{display:inline-block;font-size:clamp(1.3rem,4vw,1.8rem);color:var(--gold);letter-spacing:.18em;background:var(--bg);padding:.2rem .9rem .2rem 1.08rem;margin-bottom:.5rem;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);text-shadow:none}
+  .title{font-size:clamp(2.1rem,6vw,4rem);transform:skew(-6deg);text-shadow:4px 4px 0 var(--bg)}
+  .sub{margin-top:1rem;font-family:"Russo One";font-size:clamp(1rem,2.6vw,1.25rem);background:var(--bg);display:inline-block;padding:.4rem 1rem;clip-path:polygon(4% 0,100% 0,96% 100%,0 100%)}
+  .fighters{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+  .tag{font-family:"Russo One";background:var(--bg);border:2px solid var(--gold);padding:.35rem .9rem;transform:skew(-10deg);font-size:.95rem}
+  .tag b{color:var(--gold);font-weight:400;font-size:1.15em}
+  .tag span{display:inline-block;transform:skew(10deg)}
+  @keyframes slam{0%{opacity:0;transform:skew(-10deg) scale(1.6)}100%{opacity:1;transform:skew(-10deg) scale(1)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:clamp(3.5rem,8vw,6rem) 0}
+  h2{font-family:"Russo One";font-size:clamp(1.8rem,4.5vw,2.6rem);margin:.3rem 0 1.5rem;transform:skew(-6deg);transform-origin:left}
+  h3{font-family:"Russo One";font-size:1.25rem;line-height:1.2}
+  p{color:var(--muted);max-width:68ch}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .42s ease-out,transform .42s ease-out}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ROUND CARDS ---------- */
+  .round{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:1.5rem}
+  .round-head{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;padding:1.1rem 1.25rem;border-bottom:1px solid var(--line);background:var(--bg2)}
+  .rnum{font-family:"Russo One";font-size:2.6rem;color:var(--gold);line-height:1;transform:skew(-10deg)}
+  .meta{display:flex;flex-wrap:wrap;gap:.35rem 1rem;color:var(--muted);font-size:.9rem;margin-top:.15rem}
+  .meta svg{width:15px;height:15px;vertical-align:-2px;margin-right:4px;stroke:var(--gold)}
+  .matchup{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;min-height:120px}
+  .side{display:flex;flex-direction:column;justify-content:center;padding:1rem 1.25rem;gap:.15rem}
+  .side.blue{background:linear-gradient(100deg,rgba(31,184,224,.28),rgba(31,184,224,.06));clip-path:polygon(0 0,100% 0,88% 100%,0 100%)}
+  .side.red{background:linear-gradient(260deg,rgba(224,36,94,.32),rgba(224,36,94,.06));clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);text-align:right}
+  .side .who{font-family:"Russo One";font-size:clamp(1.05rem,3.4vw,1.5rem);line-height:1.2}
+  .side .who b{color:var(--gold);font-weight:400}
+  .side small{font-family:"Russo One";font-size:.7rem;letter-spacing:.14em}
+  .blue small{color:var(--p1)} .red small{color:var(--p2)}
+  .mini-vs{align-self:center;font-family:"Russo One";font-size:1.6rem;color:var(--gold);transform:skew(-10deg);padding:0 .25rem}
+  .challenges{display:grid;grid-template-columns:1.2fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+  .chal{background:var(--surface);padding:.9rem 1.25rem;display:flex;gap:.75rem;align-items:flex-start}
+  .chal svg{flex:none;width:22px;height:22px;stroke:var(--gold);margin-top:2px}
+  .chal .k{font-family:"Russo One";font-size:.72rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+  .chal .v{font-weight:600}
+  .chal .d{font-size:.85rem;color:var(--muted)}
+  .note{padding:.75rem 1.25rem;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+  .note b{color:var(--text)}
+
+  .bonus{border:2px dashed var(--line);border-radius:var(--r);padding:1.1rem 1.25rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;background:repeating-linear-gradient(-45deg,transparent 0 12px,rgba(255,255,255,.02) 12px 24px)}
+  .bonus .badge{font-family:"Russo One";background:var(--green);color:var(--bg);padding:.3rem .7rem;transform:skew(-10deg);font-size:.8rem;letter-spacing:.08em}
+
+
+  /* ---------- COMPACT FIGHT CARD ---------- */
+  .fc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:.6rem;overflow:hidden}
+  .fc-top{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;padding:.55rem .85rem .35rem}
+  .fc-n{font-family:"Russo One";color:var(--gold);font-size:1.25rem;transform:skew(-10deg);line-height:1}
+  .fc-c{font-family:"Russo One";font-size:1rem}
+  .fc-m{font-size:.72rem;color:var(--muted);margin-left:auto}
+  .fc-vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:"Russo One";font-size:.98rem}
+  .fc-b,.fc-r{padding:.5rem .85rem}
+  .fc-b{background:linear-gradient(100deg,rgba(31,184,224,.35),rgba(31,184,224,.05));clip-path:polygon(0 0,100% 0,90% 100%,0 100%)}
+  .fc-r{background:linear-gradient(260deg,rgba(224,36,94,.4),rgba(224,36,94,.05));clip-path:polygon(10% 0,100% 0,100% 100%,0 100%);text-align:right}
+  .fc-x{color:var(--gold);transform:skew(-10deg);font-size:.95rem;padding:0 .2rem}
+  .fc-d{font-size:.66rem;color:var(--muted);padding:.3rem .85rem .4rem;letter-spacing:.02em}
+  @media (max-width:600px){ .fc-vs{font-size:.88rem} .fc-b,.fc-r{padding:.45rem .7rem} }
+
+
+  .fc-wild{display:flex;gap:.55rem;align-items:center;font-size:.76rem;color:var(--text);padding:.5rem .85rem;border-top:1px solid rgba(242,194,48,.4);background:rgba(242,194,48,.12)}
+  .fc-wild svg{flex:none;width:16px;height:16px;stroke:var(--gold)}
+  .fc-wild b{color:var(--gold);font-weight:600}
+  .fc-r2{border:2px solid var(--gold)}
+  .fc-top .wc{margin-left:.1rem}
+  .wc{flex:none;font-family:"Russo One";background:var(--gold);color:var(--bg);font-size:.62rem;letter-spacing:.08em;padding:.15rem .45rem;transform:skew(-10deg)}
+  .fc-bonus{border:2px dashed #6a4f75;border-radius:var(--r);margin-bottom:.6rem;background:rgba(255,255,255,.015)}
+  .fc-bonus .fc-c{color:var(--muted)}
+  .fc-bonus .fc-d{padding-bottom:.55rem}
+  .fc-n.bn{color:var(--green)}
+  .nc{font-family:"Russo One";font-size:.58rem;letter-spacing:.08em;color:var(--muted);border:1px dashed var(--muted);padding:.1rem .4rem;transform:skew(-10deg)}
+  .hcp{margin-top:1.25rem;background:var(--surface);border:2px solid var(--p1);border-radius:var(--r);padding:1.2rem}
+  .hcp h3{font-size:1.25rem;margin:.2rem 0 .5rem;transform:skew(-6deg);transform-origin:left}
+  .hcp ul{list-style:none;display:grid;gap:.35rem;color:var(--muted);font-size:.95rem}
+  .hcp li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--p1);transform:skew(-14deg);margin-right:.55rem;vertical-align:1px}
+  .hcp b{color:var(--text)}
+  .hcp .ex{margin-top:.75rem;font-size:.72rem;color:var(--muted);background:var(--bg2);border-radius:6px;padding:.55rem .7rem;line-height:1.6}
+  .mascot{margin-top:1.25rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;background:var(--surface);border:2px solid var(--p2);border-radius:var(--r);padding:1.2rem;background-image:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(224,36,94,.05) 14px 28px)}
+  .m-ic{width:52px;height:52px;display:grid;place-items:center;background:var(--p2);clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)}
+  .m-ic svg{width:28px;height:28px;stroke:#fff}
+  .mascot h3{font-size:1.3rem;margin:.2rem 0 .5rem;transform:skew(-6deg);transform-origin:left}
+  .mascot ul{list-style:none;display:grid;gap:.35rem;color:var(--muted);font-size:.95rem}
+  .mascot li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--p2);transform:skew(-14deg);margin-right:.55rem;vertical-align:1px}
+  .mascot b{color:var(--text)}
+
+  /* ---------- RULES ---------- */
+  .rules{display:grid;grid-template-columns:1.4fr 1fr;gap:1.25rem}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem}
+  .panel.hl{border:2px solid var(--gold)}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:1rem;margin-top:1rem}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:2.2rem 1fr;gap:.75rem;color:var(--muted)}
+  .steps li::before{content:counter(s);font-family:"Russo One";background:var(--gold);color:var(--bg);width:2.2rem;height:2.2rem;display:grid;place-items:center;clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)}
+  .steps b{color:var(--text)}
+  .seg{display:grid;grid-template-columns:repeat(3,auto);gap:.5rem;margin-top:1rem}
+  .seg>div{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:.6rem;text-align:center}
+  .seg .n{font-family:"Russo One";color:var(--gold);font-size:1.4rem;line-height:1}
+  .seg .t{font-size:.75rem;color:var(--muted)}
+  .hud{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:.6rem 0;font-size:.95rem}
+  .hud:last-child{border:0}
+  .hud .mono{color:var(--gold)}
+
+  /* ---------- PRIZES ---------- */
+  .prizes{display:grid;grid-template-columns:1.5fr 1fr;gap:1.25rem}
+  .prize{position:relative;border-radius:var(--r);padding:1.6rem;overflow:hidden;isolation:isolate}
+  .prize.trophy{background:linear-gradient(135deg,#3b2a05,#2c1a34 70%);border:2px solid var(--gold)}
+  .prize.hat{background:linear-gradient(135deg,#0b3a2a,#2c1a34 70%);border:2px solid var(--green)}
+  .prize svg.big{position:absolute;right:-20px;bottom:-20px;width:150px;height:150px;opacity:.12;z-index:-1;stroke:#fff}
+  .prize h3{font-size:1.6rem;margin:.3rem 0 .6rem;transform:skew(-6deg);transform-origin:left}
+  .prize .tb{margin-top:1rem;font-size:.85rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.12);padding-top:.75rem}
+  .prize .tb b{color:var(--text)}
+
+  /* ---------- ROSTER ---------- */
+  .roster{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+  .fighter{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem;display:flex;justify-content:space-between;align-items:center}
+  .fighter .nm{font-family:"Russo One";font-size:1.3rem}
+  .fighter .pp{display:flex;gap:.3rem}
+  .pip{width:10px;height:22px;transform:skew(-14deg);border-radius:2px}
+  .grid-cap{font-size:.85rem;color:var(--muted);margin-top:.75rem}
+
+  footer{padding:2.5rem 0 3.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+  @media (max-width:768px){
+    .rules,.prizes,.challenges,.bonus{grid-template-columns:1fr}
+    .bonus .badge{justify-self:start}
+    .matchup{grid-template-columns:1fr}
+    .side.blue,.side.red{clip-path:none;text-align:left}
+    .mini-vs{justify-self:center;padding:.25rem 0;font-size:1.3rem}
+    .round-head{grid-template-columns:auto 1fr}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 1rem}
+    .hero{min-height:auto}
+    .hero-inner{padding:3rem .75rem 2.5rem}
+    .hero .label{font-size:.68rem;letter-spacing:.08em}
+    .vs{font-size:clamp(5rem,30vw,8rem)}
+    .title{font-size:clamp(1.9rem,9.5vw,2.6rem)}
+    .sub{font-size:.85rem;padding:.35rem .8rem}
+    .fighters{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;max-width:300px;margin:1.4rem auto 0}
+    .tag{text-align:center;font-size:.9rem}
+    section{padding:2.75rem 0}
+    h2{font-size:1.8rem;margin-bottom:1.1rem}
+    .round-head{padding:.9rem 1rem;gap:.8rem}
+    .rnum{font-size:2.1rem}
+    .round-head h3{font-size:1.15rem}
+    .meta{font-size:.82rem;gap:.25rem .8rem}
+    .side{padding:.8rem 1rem}
+    .chal,.note{padding:.8rem 1rem}
+    .panel,.prize{padding:1.15rem}
+    .prize h3{font-size:1.4rem}
+    .steps li{grid-template-columns:2rem 1fr;font-size:.95rem}
+    .steps li::before{width:2rem;height:2rem}
+    .hud{font-size:.9rem}
+    .fighter{padding:.85rem 1rem}
+    .fighter .nm{font-size:1.15rem}
+  }
+  @media (max-width:420px){ .roster{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.vs{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite (Lucide-style strokes) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z"/></symbol>
+    <symbol id="i-skull" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="m12.5 17-.5-1-.5 1h1z"/><path d="M16 20a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20"/></symbol>
+    <symbol id="i-hat" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c0-5 4-9 9-9s9 4 9 9"/><path d="M1 17h22"/><path d="M12 8V5"/></symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="speed"></div>
+  <div class="slash"></div>
+  <div class="hero-inner">
+    <div class="label">Barnbougle, Tasmania · 13–15 Nov 2026</div>
+    <div class="vs display">VS</div>
+    <div class="year display">2026</div>
+    <h1 class="title display">MASS Invitational</h1>
+    <div class="sub">3 rounds · 3 courses · every partner once</div>
+    <div class="fighters">
+      <div class="tag"><span><b>M</b>ARCUS</span></div>
+      <div class="tag"><span><b>A</b>NDREW</span></div>
+      <div class="tag"><span><b>S</b>IDNEY</span></div>
+      <div class="tag"><span><b>S</b>TU</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="label reveal">The schedule</div>
+    <h2 class="reveal">Fight card</h2>
+    <article class="fc reveal">
+      <div class="fc-top"><span class="fc-n">R1</span><span class="fc-c">Barnbougle Dunes</span><span class="fc-m mono">Fri 13 Nov · 2:40pm · 18 holes</span></div>
+      <div class="fc-vs"><span class="fc-b">Stu &amp; Andrew</span><span class="fc-x">VS</span><span class="fc-r">Sidney &amp; Marcus</span></div>
+      <div class="fc-d mono">Closest to pin #7 · Longest drive #14</div>
+    </article>
+    <article class="fc fc-r2 reveal">
+      <div class="fc-top"><span class="fc-n">R2</span><span class="fc-c">Lost Farm</span><span class="wc">WILD CARDS</span><span class="fc-m mono">Sat 14 Nov · 12:20pm · holes 1–18</span></div>
+      <div class="fc-vs"><span class="fc-b">Stu &amp; Sidney</span><span class="fc-x">VS</span><span class="fc-r">Andrew &amp; Marcus</span></div>
+      <div class="fc-d mono">Closest to pin #4 · Longest drive #8</div>
+      <div class="fc-wild"><svg><use href="#i-zap"/></svg><span><b>Round 2 is played with wild cards</b> — dealt the morning of Sat 14 Nov.</span></div>
+    </article>
+    <article class="fc-bonus reveal">
+      <div class="fc-top"><span class="fc-n bn">B</span><span class="fc-c">Bonus round</span><span class="nc">DOESN'T COUNT</span><span class="fc-m mono">Sat 14 Nov · Lost Farm · 13a &amp; 18a</span></div>
+      <div class="fc-d mono">Bonus game on the extra holes beyond 18</div>
+    </article>
+    <article class="fc reveal">
+      <div class="fc-top"><span class="fc-n">R3</span><span class="fc-c">Bougle Run</span><span class="fc-m mono">Sun 15 Nov · 8:30am · 14 holes</span></div>
+      <div class="fc-vs"><span class="fc-b">Stu &amp; Marcus</span><span class="fc-x">VS</span><span class="fc-r">Sidney &amp; Andrew</span></div>
+      <div class="fc-d mono">Closest to pin #10 · Longest drive #8 · segments 1–7 / 8–14</div>
+    </article>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="label reveal">How it works</div>
+    <h2 class="reveal">Rules of combat</h2>
+    <div class="rules">
+      <div class="panel reveal">
+        <h3>Best ball / worst ball match play</h3>
+        <ol class="steps">
+          <li><div><b>Everyone plays their own ball</b> and scores <b>net stableford, off handicap</b>.</div></li>
+          <li><div><b>Best ball point:</b> on each hole, your pair's best score vs theirs. Higher wins 1 point.</div></li>
+          <li><div><b>Worst ball point:</b> your pair's worse score vs theirs. Higher wins 1 point.</div></li>
+          <li><div><b>Tied hole?</b> No point, nothing carries over.</div></li>
+          <li><div><b>Add up the hole points</b> on each segment. The pair with more wins that segment, and <b>both players</b> bank 1 championship point.</div></li>
+        </ol>
+        <div class="seg">
+          <div><div class="n">1</div><div class="t">Front 9</div></div>
+          <div><div class="n">1</div><div class="t">Back 9</div></div>
+          <div><div class="n">1</div><div class="t">Overall</div></div>
+        </div>
+      </div>
+      <div class="panel hl reveal">
+        <div class="label">By the numbers</div>
+        <div class="hud"><span>Championship points per round</span><span class="mono">3</span></div>
+        <div class="hud"><span>Max per player, weekend</span><span class="mono">9</span></div>
+        <div class="hud"><span>Competition holes</span><span class="mono">50</span></div>
+        <div class="hud"><span>Pin &amp; drive contests</span><span class="mono">6</span></div>
+        <div class="hud"><span>Partner rotation</span><span class="mono">1× each</span></div>
+      </div>
+    </div>
+    <div class="hcp reveal">
+      <div class="label">Handicaps</div>
+      <h3>Full handicaps, adjusted daily</h3>
+      <ul>
+        <li>Everyone plays off their handicap all weekend.</li>
+        <li><b>Between days</b>, your handicap moves by <b>50% of the gap</b> between how you played and what your handicap expected.</li>
+        <li><b>Capped at 2 strokes</b> up or down per day.</li>
+      </ul>
+      <div class="ex mono">e.g. 40 pts = played 4 better than handicap &rarr; cut 2 for tomorrow<br>32 pts = played 4 worse &rarr; add 2</div>
+    </div>
+    <div class="mascot reveal">
+      <div class="m-ic"><svg><use href="#i-skull"/></svg></div>
+      <div>
+        <div class="label" style="color:var(--p2)">Penalty item</div>
+        <h3>The Three-Putt Mascot</h3>
+        <ul>
+          <li><b>Three-putt</b> (or worse) and the mascot is yours.</li>
+          <li><b>Carry it</b> on your bag until someone else three-putts, then hand it over.</li>
+          <li>Counts on <b>every hole</b>, all weekend, bonus holes included.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label reveal">What's at stake</div>
+    <h2 class="reveal">The spoils</h2>
+    <div class="prizes">
+      <div class="prize trophy reveal">
+        <svg class="big"><use href="#i-trophy"/></svg>
+        <div class="label">Champion</div>
+        <h3>The Trophy</h3>
+        <p style="color:#e9dcc0">Most championship points across all three rounds.</p>
+        <div class="tb"><b>Tie-break:</b> highest total stableford across the weekend.</div>
+      </div>
+      <div class="prize hat reveal">
+        <svg class="big"><use href="#i-hat"/></svg>
+        <div class="label" style="color:var(--green)">Skills</div>
+        <h3>Barnbougle Hat</h3>
+        <p style="color:#cfe9d6">Most wins across the six closest-to-pin and longest-drive contests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="label reveal">Character select</div>
+    <h2 class="reveal">The roster</h2>
+    <div class="roster">
+      <div class="fighter reveal"><span class="nm">Stu</span><span class="pp"><i class="pip" style="background:var(--p1)"></i><i class="pip" style="background:var(--p1)"></i><i class="pip" style="background:var(--p1)"></i></span></div>
+      <div class="fighter reveal"><span class="nm">Sidney</span><span class="pp"><i class="pip" style="background:var(--p2)"></i><i class="pip" style="background:var(--p1)"></i><i class="pip" style="background:var(--p2)"></i></span></div>
+      <div class="fighter reveal"><span class="nm">Andrew</span><span class="pp"><i class="pip" style="background:var(--p1)"></i><i class="pip" style="background:var(--p2)"></i><i class="pip" style="background:var(--p2)"></i></span></div>
+      <div class="fighter reveal"><span class="nm">Marcus</span><span class="pp"><i class="pip" style="background:var(--p2)"></i><i class="pip" style="background:var(--p2)"></i><i class="pip" style="background:var(--p1)"></i></span></div>
+    </div>
+    <p class="grid-cap">Bars show each player's side for R1 · R2 · R3 (blue / red).</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Scoring runs in Squabbit. Hole picks and distances from published course guides.</div>
+</footer>
+
+<script>
+  (function(){
+    var els=[].slice.call(document.querySelectorAll('.reveal'));
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.12});
+    els.forEach(function(e,i){ e.style.transitionDelay=((i%5)*80)+'ms'; io.observe(e); });
+  })();
+</script>
+</body>
+</html>
