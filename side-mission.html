@@ -67,6 +67,9 @@
   .stop.home .t small{color:var(--bg)}
   .day{font-family:"Russo One";font-size:.8rem;letter-spacing:.12em;color:var(--gold);margin:1.1rem 0 .5rem;padding-left:.1rem}
   .day:first-of-type{margin-top:0}
+  .c-iga{background:#e8402a;color:#fff}
+  .c-din{background:#f2c230;color:var(--bg)}
+  .opt .meta{margin-top:.45rem}
   /* RED PICK */
   .pick{border:2px solid var(--wine);border-radius:var(--r);padding:1.1rem;background:linear-gradient(135deg,rgba(155,29,74,.28),var(--surface) 70%)}
   .pick h3{font-size:1.3rem;transform:skew(-6deg);transform-origin:left;margin:.2rem 0 .5rem}
@@ -138,16 +141,27 @@
           <div class="meta mono">22 Victoria St, Scottsdale · listings disagree on Thu close (4 or 5pm), call ahead</div></div>
       </div>
       <div class="stop">
-        <div class="t">4:40<small>PM</small></div>
+        <div class="t">4:35<small>PM</small></div>
+        <div class="b"><h3>IGA Bridport <span class="chip c-iga">SUPPLIES</span></h3>
+          <p>Stock the house: breakfast, snacks, ice, and drinks for the weekend.</p>
+          <div class="meta mono">109 Main St, Bridport · open until about 6:30pm, so go before golf</div></div>
+      </div>
+      <div class="stop">
+        <div class="t">5:00<small>PM</small></div>
         <div class="b"><h3>Bridport Golf Club <span class="chip c-golf">9 HOLES</span></h3>
           <p>Twilight nine at the local club, with plenty of daylight in mid-November. Clubhouse bar for after.</p>
           <div class="meta mono">Main St, Bridport · (03) 6356 1557 · pay at clubhouse</div></div>
       </div>
       <div class="stop home">
-        <div class="t">6:45<small>PM</small></div>
+        <div class="t">7:00<small>PM</small></div>
         <div class="b"><h3>Check in: Bridport by the Sea <span class="chip c-home">BASE</span></h3>
           <p>Three-bedroom house with sea views. Drop the bags and the bottles.</p>
           <div class="meta mono">Check-in 2pm–8pm · tell them your arrival time in advance</div></div>
+      </div>
+      <div class="stop">
+        <div class="t">7:30<small>PM</small></div>
+        <div class="b"><h3>Dinner on Main Street <span class="chip c-din">ON FOOT</span></h3>
+          <p>Walk into town. Options below, so book St Marks if you want the good table.</p></div>
       </div>
     </div>
     <div class="day">FRI 13 NOV</div>
@@ -169,6 +183,31 @@
 
 <section class="alt">
   <div class="wrap">
+    <div class="label">Thursday night</div>
+    <h2>Dinner, on foot</h2>
+    <div class="opts">
+      <div class="opt best">
+        <h3>St Marks Bridport <span class="chip c-din">TOP PICK</span></h3>
+        <p>The pick of the town. An à la carte dinner menu Thursday to Saturday, a drinks list heavy on Tasmanian producers, and an ocean-facing courtyard. Known for the roast duck.</p>
+        <div class="meta mono">101 Main St · Wed–Sat until 9pm · book on OpenTable</div>
+      </div>
+      <div class="opt">
+        <h3>Bridport Bay Inn <span class="chip c-din">PUB</span></h3>
+        <p>The local pub, a few doors from the IGA. Parmy and steak are the go-tos. Easy fallback if St Marks is full.</p>
+        <div class="meta mono">105 Main St · until about 9pm</div>
+      </div>
+      <div class="opt">
+        <h3>Bridport Bunker Club <span class="chip c-din">EARLY ONE</span></h3>
+        <p>Bistro meals with local fish and seafood, on a deck overlooking the water. $3 pots from 5 to 7pm on Thursdays, but it closes at 8, so only if you're early.</p>
+        <div class="meta mono">67 Main St · Thu until 8pm · (03) 6356 1146</div>
+      </div>
+    </div>
+    <p style="font-size:.78rem;margin-top:.8rem">All three are on Main Street. Check the walk from the house once you have its exact address.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="label">The red</div>
     <div class="pick">
       <div class="label" style="color:#ff7aa6">Recommended</div>
@@ -183,7 +222,7 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="label">Getting around</div>
     <h2>Extraction plan</h2>
@@ -200,7 +239,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap">
     <div class="label">Before you go</div>
     <h2>Mission checklist</h2>
@@ -211,8 +250,9 @@
       <label><input type="checkbox"><span>Call Pipers Brook to confirm Thursday hours</span></label>
       <label><input type="checkbox"><span>Book or check Sinapius for around 2pm Thu</span></label>
       <label><input type="checkbox"><span>Call Little Rivers to check what time they close Thursday</span></label>
-      <label><input type="checkbox"><span>Call Bridport Golf Club about a 4:40pm hit-off</span></label>
-      <label><input type="checkbox"><span>Tell Bridport by the Sea you'll arrive around 6:45pm (check-in closes 8pm)</span></label>
+      <label><input type="checkbox"><span>Call Bridport Golf Club about a 5:00pm hit-off</span></label>
+      <label><input type="checkbox"><span>Tell Bridport by the Sea you'll arrive around 7pm (check-in closes 8pm)</span></label>
+      <label><input type="checkbox"><span>Book St Marks for about 7:30pm Thursday</span></label>
       <label><input type="checkbox"><span>Decide who's driving</span></label>
     </div>
   </div>
