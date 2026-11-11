@@ -119,6 +119,21 @@
   .mascot li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--p2);transform:skew(-14deg);margin-right:.55rem;vertical-align:1px}
   .mascot b{color:var(--text)}
 
+
+  /* ---------- FLIGHTS ---------- */
+  .fl{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:.6rem;overflow:hidden}
+  .fl-h{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;padding:.55rem .85rem}
+  .fl-who{font-family:"Russo One";font-size:1rem}
+  .fl-note{font-size:.7rem;color:var(--muted)}
+  .leg{display:grid;grid-template-columns:3.4rem 5.6rem 1fr;gap:.15rem .6rem;align-items:baseline;padding:.45rem .85rem;border-top:1px solid var(--line);font-size:.8rem}
+  .lt{font-family:"Russo One";font-size:.62rem;letter-spacing:.08em;color:var(--bg);background:var(--p1);padding:.1rem .4rem;transform:skew(-10deg);justify-self:start}
+  .leg:last-child .lt{background:var(--p2);color:#fff}
+  .ld{color:var(--text);font-weight:600}
+  .lc{color:var(--gold);font-size:.72rem}
+  .lr{grid-column:2 / -1;color:var(--muted);font-size:.74rem}
+  .fl-tbc{background:transparent;border-style:dashed}
+  .tbc{font-family:"Russo One";font-size:.6rem;letter-spacing:.08em;color:var(--muted);border:1px dashed var(--muted);padding:.1rem .4rem;transform:skew(-10deg)}
+
   /* ---------- RULES ---------- */
   .rules{display:grid;grid-template-columns:1.4fr 1fr;gap:1.25rem}
   .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem}
@@ -251,6 +266,22 @@
       <div class="fc-top"><span class="fc-n">R3</span><span class="fc-c">Bougle Run</span><span class="fc-m mono">Sun 15 Nov · 8:30am · 14 holes</span></div>
       <div class="fc-vs"><span class="fc-b">Stu &amp; Marcus</span><span class="fc-x">VS</span><span class="fc-r">Sidney &amp; Andrew</span></div>
       <div class="fc-d mono">Closest to pin #10 · Longest drive #8 · segments 1–7 / 8–14</div>
+    </article>
+
+    <div class="label reveal" style="margin-top:2.25rem">Travel</div>
+    <h2 class="reveal">Flight plan</h2>
+    <article class="fl reveal">
+      <div class="fl-h"><span class="fl-who">Stu &amp; Andrew</span><span class="fl-note">arrive a day early for the Side Mission</span></div>
+      <div class="leg"><span class="lt">OUT</span><span class="ld">Thu 12 Nov</span><span class="lc mono">Qantas</span><span class="lr mono">SYD 9:35am → LST 11:25am</span></div>
+      <div class="leg"><span class="lt">HOME</span><span class="ld">Sun 15 Nov</span><span class="lc mono">Virgin Australia</span><span class="lr mono">LST 3:45pm → SYD 5:20pm</span></div>
+    </article>
+    <article class="fl reveal">
+      <div class="fl-h"><span class="fl-who">Sidney</span></div>
+      <div class="leg"><span class="lt">OUT</span><span class="ld">Fri 13 Nov</span><span class="lc mono">QF1549</span><span class="lr mono">SYD 9:35am → LST 11:25am</span></div>
+      <div class="leg"><span class="lt">HOME</span><span class="ld">Sun 15 Nov</span><span class="lc mono">QF2076 + QF486</span><span class="lr mono">LST 5:05pm → SYD 8:40pm · 1 stop</span></div>
+    </article>
+    <article class="fl fl-tbc reveal">
+      <div class="fl-h"><span class="fl-who">Marcus</span><span class="tbc">TBC</span></div>
     </article>
   </div>
 </section>
