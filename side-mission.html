@@ -70,6 +70,26 @@
   .c-iga{background:#e8402a;color:#fff}
   .c-din{background:#f2c230;color:var(--bg)}
   .opt .meta{margin-top:.45rem}
+  /* RESULT */
+  .res{padding-top:2rem}
+  .vsbox{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+  .vs-s,.vs-a{padding:.8rem 1rem}
+  .vs-s{background:linear-gradient(100deg,rgba(31,184,224,.35),rgba(31,184,224,.05))}
+  .vs-a{background:linear-gradient(260deg,rgba(224,36,94,.4),rgba(224,36,94,.05));text-align:right}
+  .vs-s small,.vs-a small{font-family:"Russo One";font-size:.62rem;letter-spacing:.1em}
+  .vs-s small{color:var(--p1)} .vs-a small{color:#ff7aa6}
+  .pts{font-family:"Russo One";font-size:2.6rem;line-height:1;margin:.25rem 0;transform:skew(-8deg)}
+  .vsbox .mono{font-size:.72rem;color:var(--muted)}
+  .vs-x{align-self:center;font-family:"Russo One";color:var(--gold);font-size:1.3rem;transform:skew(-10deg);padding:0 .3rem}
+  .verdict{margin:.8rem 0;font-size:.88rem;color:var(--muted);line-height:1.6}
+  table.card{width:100%;border-collapse:collapse;font-size:.78rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .card th{font-family:"Russo One";font-weight:400;font-size:.62rem;letter-spacing:.08em;color:var(--gold);text-align:left;padding:.5rem .55rem;background:var(--bg2)}
+  .card td{padding:.42rem .55rem;border-top:1px solid var(--line)}
+  .card td span{color:var(--gold);font-size:.7rem;margin-left:.2rem}
+  .card td.win{background:rgba(242,194,48,.08);font-weight:600}
+  .card tr.split td{font-size:.66rem;color:var(--muted);background:var(--bg2);text-align:center;letter-spacing:.04em}
+  .w-stu{color:var(--p1)} .w-and{color:#ff7aa6} .w-half{color:var(--muted)}
+  .fine{font-size:.74rem;margin-top:.7rem;line-height:1.55}
   /* RED PICK */
   .pick{border:2px solid var(--wine);border-radius:var(--r);padding:1.1rem;background:linear-gradient(135deg,rgba(155,29,74,.28),var(--surface) 70%)}
   .pick h3{font-size:1.3rem;transform:skew(-6deg);transform-origin:left;margin:.2rem 0 .5rem}
@@ -110,6 +130,23 @@
 </header>
 
 <main>
+<section class="res">
+  <div class="wrap">
+    <div class="label">Thu 12 Nov · Bridport Golf Club</div>
+    <h2>Side Mission result</h2>
+    <div class="vsbox">
+      <div class="vs-s"><small>STU · HCP 13</small><div class="pts">19</div><div class="mono">48 gross</div></div>
+      <div class="vs-x">VS</div>
+      <div class="vs-a"><small>ANDREW · HCP 11</small><div class="pts">19</div><div class="mono">46 gross</div></div>
+    </div>
+    <div class="verdict"><span class="chip c-fizz">ALL SQUARE</span> 19 points each, and every segment halved: front 4 (1–1), back 5 (2–2), overall (3–3). <b>Not a single championship point would have changed hands.</b></div>
+    <table class="card mono">
+      <thead><tr><th>Hole</th><th>Par</th><th>Stu</th><th>Andrew</th><th>Won by</th></tr></thead>
+      <tbody><tr><td>1</td><td>3</td><td class="">5 <span>2</span></td><td class="win">3 <span>4</span></td><td><b class="w-and">ANDREW</b></td></tr><tr><td>2</td><td>4</td><td class="">6 <span>2</span></td><td class="">6 <span>2</span></td><td><b class="w-half">½</b></td></tr><tr><td>3</td><td>4</td><td class="win">4 <span>4</span></td><td class="">6 <span>1</span></td><td><b class="w-stu">STU</b></td></tr><tr><td>4</td><td>5</td><td class="">6 <span>3</span></td><td class="">5 <span>3</span></td><td><b class="w-half">½</b></td></tr><tr class="split"><td colspan="5">Front 4: 1–1 · all square</td></tr><tr><td>5</td><td>4</td><td class="">7 <span>0</span></td><td class="win">5 <span>2</span></td><td><b class="w-and">ANDREW</b></td></tr><tr><td>6</td><td>3</td><td class="win">4 <span>2</span></td><td class="">5 <span>1</span></td><td><b class="w-stu">STU</b></td></tr><tr><td>7</td><td>4</td><td class="">5 <span>2</span></td><td class="win">4 <span>3</span></td><td><b class="w-and">ANDREW</b></td></tr><tr><td>8</td><td>5</td><td class="win">6 <span>2</span></td><td class="">7 <span>1</span></td><td><b class="w-stu">STU</b></td></tr><tr><td>9</td><td>4</td><td class="">5 <span>2</span></td><td class="">5 <span>2</span></td><td><b class="w-half">½</b></td></tr><tr class="split"><td colspan="5">Back 5: 2–2 · all square</td></tr></tbody>
+    </table>
+    <p class="fine">Gross score, then stableford points in gold. Scored like the main game: net stableford off half handicaps for 9 holes (Andrew 22.9 → 11, Stu 26.7 → 13), with strokes given by stroke index. <b>Tie-breakers, if you want one:</b> Andrew takes it on gross (46 v 48) and on countback over the last 6 holes (12 v 11).</p>
+  </div>
+</section>
 <section>
   <div class="wrap">
     <div class="label">The run sheet</div>
