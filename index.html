@@ -120,6 +120,20 @@
   .mascot b{color:var(--text)}
 
 
+
+  /* ---------- STANDINGS ---------- */
+  .fc-res{display:flex;gap:.55rem;align-items:center;font-size:.74rem;color:var(--muted);padding:.45rem .85rem .55rem;border-top:1px solid rgba(60,207,90,.4);background:rgba(60,207,90,.1)}
+  .fc-res b{color:var(--text)}
+  .rs{flex:none;font-family:"Russo One";background:var(--green);color:var(--bg);font-size:.62rem;letter-spacing:.08em;padding:.15rem .45rem;transform:skew(-10deg)}
+  table.stand{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:.85rem}
+  .stand th{font-family:"Russo One";font-weight:400;font-size:.62rem;letter-spacing:.08em;color:var(--gold);text-align:left;padding:.5rem .7rem;background:var(--bg2)}
+  .stand td{padding:.5rem .7rem;border-top:1px solid var(--line)}
+  .stand td.big{font-family:"Russo One";font-size:1.15rem;color:var(--gold)}
+  .stand tr.lead td{background:rgba(242,194,48,.08);font-weight:600}
+  .stand .dn{color:#ff7aa6;font-family:"JetBrains Mono",monospace}
+  .stand .up{color:var(--green);font-family:"JetBrains Mono",monospace}
+  .st-note{font-size:.74rem;margin-top:.5rem}
+
   /* ---------- FLIGHTS ---------- */
   .fl{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:.6rem;overflow:hidden}
   .fl-h{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;padding:.55rem .85rem}
@@ -252,6 +266,7 @@
       <div class="fc-top"><span class="fc-n">R1</span><span class="fc-c">Barnbougle Dunes</span><span class="fc-m mono">Fri 13 Nov · 2:40pm · 18 holes</span></div>
       <div class="fc-vs"><span class="fc-b">Stu &amp; Andrew</span><span class="fc-x">VS</span><span class="fc-r">Sidney &amp; Marcus</span></div>
       <div class="fc-d mono">Closest to pin #7 · Longest drive #14</div>
+      <div class="fc-res"><span class="rs">FINAL</span><span><b>Stu &amp; Andrew win 2–1.</b> Front 9 to Sid &amp; Marcus (8–5). Back 9 (10–4) and overall (15–12) to Stu &amp; Andrew.</span></div>
     </article>
     <article class="fc fc-r2 reveal">
       <div class="fc-top"><span class="fc-n">R2</span><span class="fc-c">Lost Farm</span><span class="wc">WILD CARDS</span><span class="fc-m mono">Sat 14 Nov · 12:20pm · holes 1–18</span></div>
@@ -269,6 +284,28 @@
       <div class="fc-d mono">Closest to pin #10 · Longest drive #8 · segments 1–7 / 8–14</div>
     </article>
 
+    <div class="label reveal" style="margin-top:2.25rem">After Round 1</div>
+    <h2 class="reveal">Standings</h2>
+    <table class="stand reveal">
+      <thead><tr><th>#</th><th>Player</th><th>Champ pts</th><th>Stableford</th></tr></thead>
+      <tbody>
+        <tr class="lead"><td>1</td><td>Andrew</td><td class="big">2</td><td>38</td></tr>
+        <tr><td>2</td><td>Stu</td><td class="big">2</td><td>22</td></tr>
+        <tr><td>3</td><td>Marcus</td><td class="big">1</td><td>41</td></tr>
+        <tr><td>4</td><td>Sidney</td><td class="big">1</td><td>18</td></tr>
+      </tbody>
+    </table>
+    <p class="st-note reveal">Champ points decide the trophy, with total stableford as the tie-break. Marcus has the best round of the day (41).</p>
+    <table class="stand reveal" style="margin-top:.9rem">
+      <thead><tr><th colspan="4">Handicaps for Round 2 (50% of the gap to 36 points, max 2)</th></tr><tr><th>Player</th><th>R1 pts</th><th>Change</th><th>New GA</th></tr></thead>
+      <tbody>
+        <tr><td>Marcus</td><td>41</td><td class="dn">−2.0</td><td>15.0</td></tr>
+        <tr><td>Andrew</td><td>38</td><td class="dn">−1.0</td><td>21.9</td></tr>
+        <tr><td>Stu</td><td>22</td><td class="up">+2.0</td><td>28.7</td></tr>
+        <tr><td>Sidney</td><td>18</td><td class="up">+2.0</td><td>30.0</td></tr>
+      </tbody>
+    </table>
+    <p class="st-note reveal">Convert the new GA with the Lost Farm daily handicap chart before entering it in Squabbit.</p>
     <div class="label reveal" style="margin-top:2.25rem">Travel</div>
     <h2 class="reveal">Flight plan</h2>
     <article class="fl reveal">
