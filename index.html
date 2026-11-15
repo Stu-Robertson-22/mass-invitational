@@ -135,6 +135,15 @@
   .hatw{color:var(--gold);font-weight:600}
   .hat-race{display:flex;gap:.6rem;align-items:center;margin-top:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.6rem .8rem;font-size:.85rem}
   .hat-race small{color:var(--muted);font-size:.72rem}
+  .champ{margin-top:2.25rem;background:linear-gradient(135deg,#f2c230,#d49a12);color:var(--bg);border-radius:var(--r);padding:1.2rem 1.1rem;text-align:center;box-shadow:6px 6px 0 var(--p2)}
+  .cname{font-family:"Russo One";font-size:3rem;line-height:1;margin:.35rem 0;transform:skew(-10deg)}
+  .csub{font-size:.8rem;font-weight:600}
+  .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+  .fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.75rem .85rem;display:flex;flex-direction:column;gap:.2rem}
+  .fact small{font-size:.66rem;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;font-family:"Russo One"}
+  .fact b{font-family:"Russo One";font-size:1.05rem;font-weight:400}
+  .fact span{font-size:.74rem;color:var(--muted)}
+  @media (max-width:420px){.facts{grid-template-columns:1fr}}
   .st-note{font-size:.74rem;margin-top:.5rem}
 
   /* ---------- FLIGHTS ---------- */
@@ -286,32 +295,38 @@
       <div class="fc-top"><span class="fc-n">R3</span><span class="fc-c">Bougle Run</span><span class="fc-m mono">Sun 15 Nov · 8:30am · 14 holes</span></div>
       <div class="fc-vs"><span class="fc-b">Stu &amp; Marcus</span><span class="fc-x">VS</span><span class="fc-r">Sidney &amp; Andrew</span></div>
       <div class="fc-d mono">Closest to pin #10 · Longest drive #8 · segments 1–7 / 8–14</div>
+      <div class="fc-res"><span class="rs">FINAL</span><span><b>Stu &amp; Marcus win 2–0.</b> Front halved (4–4). Back (7–2) and overall (11–6) to Stu &amp; Marcus.</span></div>
     </article>
 
-    <div class="label reveal" style="margin-top:2.25rem">After Round 2</div>
+    <div class="champ reveal">
+      <div class="label" style="color:var(--bg)">2026 MASS Invitational champion</div>
+      <div class="cname">MARCUS</div>
+      <div class="csub">6 championship points · 101 stableford · +49 for the weekend</div>
+    </div>
+    <div class="label reveal" style="margin-top:2rem">Final</div>
     <h2 class="reveal">Standings</h2>
     <table class="stand reveal">
       <thead><tr><th>#</th><th>Player</th><th>Champ pts</th><th>Stableford</th></tr></thead>
       <tbody>
-        <tr class="lead"><td>1</td><td>Andrew</td><td class="big">5</td><td>65</td></tr>
-        <tr><td>2</td><td>Marcus</td><td class="big">4</td><td>70</td></tr>
-        <tr><td>3</td><td>Stu</td><td class="big">2</td><td>56</td></tr>
-        <tr><td>4</td><td>Sidney</td><td class="big">1</td><td>37</td></tr>
+        <tr class="lead"><td>1</td><td>Marcus</td><td class="big">6</td><td>101</td></tr>
+        <tr><td>2</td><td>Andrew</td><td class="big">5</td><td>89</td></tr>
+        <tr><td>3</td><td>Stu</td><td class="big">4</td><td>88</td></tr>
+        <tr><td>4</td><td>Sidney</td><td class="big">1</td><td>69</td></tr>
       </tbody>
     </table>
-    <p class="st-note reveal">R1 to Stu &amp; Andrew 2–1. R2 to Andrew &amp; Marcus 3–0. Champ points decide the trophy, total stableford breaks a tie. Stu had the best round on Saturday (34).</p>
-    <div class="hat-race reveal"><span class="rs" style="background:var(--p2);color:#fff">SUNDAY</span><span><b>Stu &amp; Marcus v Sid &amp; Andrew</b> with 3 points up for grabs. Marcus needs 2 of the 3 segments to force a stableford tie-break, or all 3 to win outright. Anything less and the trophy is Andrew's.</span></div>
-    <div class="hat-race reveal"><span class="rs" style="background:var(--gold)">HAT RACE</span><span><b>Andrew 2</b> · others 0 after R1 <small>(R2 winners to add · 2 contests left)</small></span></div>
-    <table class="stand reveal" style="margin-top:.9rem">
-      <thead><tr><th colspan="4">Handicaps for Round 3 (50% of the gap to 36 points, max 2)</th></tr><tr><th>Player</th><th>R2 pts</th><th>Change</th><th>New GA</th></tr></thead>
-      <tbody>
-        <tr><td>Stu</td><td>34</td><td class="up">+1.0</td><td>29.7</td></tr>
-        <tr><td>Marcus</td><td>29</td><td class="up">+2.0</td><td>17.0</td></tr>
-        <tr><td>Andrew</td><td>27</td><td class="up">+2.0</td><td>23.9</td></tr>
-        <tr><td>Sidney</td><td>19</td><td class="up">+2.0</td><td>32.0</td></tr>
-      </tbody>
-    </table>
-    <p class="st-note reveal">Bougle Run is 14 holes: use the Bougle Run daily handicap chart, or about 78% of an 18-hole daily handicap.</p>
+    <p class="st-note reveal">R1 Stu &amp; Andrew 2–1 · R2 Andrew &amp; Marcus 3–0 · R3 Stu &amp; Marcus 2–0. Round 3 scored on the handicaps in Squabbit on the day; the adjusted-handicap rule gives the same champion (Marcus on the stableford tie-break).</p>
+
+    <div class="label reveal" style="margin-top:2rem">Weekend in numbers</div>
+    <h2 class="reveal">Fun facts</h2>
+    <div class="facts reveal">
+      <div class="fact"><small>Most holes won (outright best net score)</small><b>Marcus · 14</b><span>Stu 9 · Andrew 9 · Sid 5</span></div>
+      <div class="fact"><small>Most birdies</small><b>Marcus · 2</b><span>Stu 1 (Dunes 12) · Andrew 1 (Bougle Run 6) · Sid 0</span></div>
+      <div class="fact"><small>Most pars</small><b>Marcus · 17</b><span>Stu 6 · Andrew 6 · Sid 6</span></div>
+      <div class="fact"><small>Total stableford (50 holes)</small><b>Marcus · 101</b><span>Andrew 89 · Stu 88 · Sid 69</span></div>
+      <div class="fact"><small>Strokes v par (par 187)</small><b>Marcus · +49</b><span>Andrew +79 · Stu +99 · Sid +121</span></div>
+      <div class="fact"><small>Best single round</small><b>Marcus · 41 pts</b><span>Dunes, Friday</span></div>
+    </div>
+    <p class="st-note reveal">Gross figures include Squabbit's scores for pick-ups.</p>
     <div class="label reveal" style="margin-top:2.25rem">Travel</div>
     <h2 class="reveal">Flight plan</h2>
     <article class="fl reveal">
